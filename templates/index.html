@@ -6,8 +6,18 @@
 </head>
 <body>
 
+<form action="{% url 'thanks_page' %}" method="post">
+    {% csrf_token %}
+    <label>Имя</label>
+    <input name="name">
+    <label>Телефон</label>
+    <input name="phone">
+    <button type="submit">ОТПРАВИТЬ</button>
+</form>
+<br>
+<br>
+<br>
 {% if object_list %}
-
 <table border="1">
     <tr>
         <th>Id</th>
@@ -28,4 +38,6 @@
 Данных нет
 {% endif %}
 </body>
+
+
 </html>
